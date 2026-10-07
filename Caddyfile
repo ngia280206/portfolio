@@ -1,0 +1,18 @@
+# Caddy Server Configuration for Portfolio Web
+# Port 8080 (Local Hosting)
+:8080 {
+	# Root directory pointing to the static portfolio website
+	root * .
+
+	# Enable static file server
+	file_server
+
+	# Compression for performance (gzip, zstd)
+	encode gzip zstd
+
+	# Access logging
+	log {
+		output file caddy_access.log
+		format console
+	}
+}
